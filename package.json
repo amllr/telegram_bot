@@ -1,0 +1,17 @@
+{
+  "name": "clearbot",
+  "version": "1.0.0",
+  "description": "what does this bot to do",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "api": "^1.0.0-8",
+    "cron": "^1.3.0",
+    "node-telegram-bot": "^0.1.9",
+    "node-telegram-bot-api": "^0.28.0"
+  }
+}
