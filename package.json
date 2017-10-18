@@ -1,7 +1,7 @@
 {
   "name": "clearbot",
   "version": "1.0.0",
-  "description": "what does this bot to do",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
