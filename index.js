@@ -6,8 +6,9 @@ var bot = new TelegramBot(token, { polling: true });
 bot.can_delete_messages = true;
 
 bot.on('message', (msg) => {
-    
-    /*var bye = "bye";
+    //инфа, откуда пришло обращение к боту
+    console.log(msg);
+    var bye = "bye";
     if (msg.text.toLowerCase().includes(bye)) {
         bot.sendMessage(msg.chat.id, "Have a nice day " + msg.from.first_name); 
     }
@@ -16,20 +17,12 @@ bot.on('message', (msg) => {
     if (msg.text.toLowerCase().includes(hello)){
         bot.sendMessage(msg.chat.id, "Hi, " + msg.from.first_name);
     }
-    */
     
     var clean = "clean";
+    
     if (msg.text.toLowerCase().indexOf(clean) === 0){
-        for (var i = 0; i < msg.message_id; i++){
-            bot.deleteMessage(msg.chat.id, i);    
-        }  
-    }
-});
-
-bot.onText(/\/start/, (msg) => {
-    bot.sendMessage(msg.chat.id, "Let's start", {
-        "reply_markup": {
-             "keyboard": [["clean"]]
+        for (var i = msg.message_id; i > 0; i--){
+            bot.deleteMessage(msg.chat.id, i);
         }
-    });  
+    }
 });
